@@ -20,5 +20,9 @@ public class JogadorJogoDAOImpl extends GenericDAOImpl<JogadorJogo, JogadorJogoP
 	public List<JogadorJogo> listarJogosDoJogador(int codigo) {
 		return em.createQuery("FROM JogadorJogo jj WHERE jj.jogador.codigo = :codJogador", JogadorJogo.class).setParameter("codJogador", codigo).getResultList();
 	}
+	
+	public Long qtJogosJogador(int codigo){
+		return em.createQuery("SELECT COUNT(*) FROM JogadorJogo jj WHERE jj.jogador.codigo = :codJogador", Long.class).setParameter("codJogador", codigo).getSingleResult();
+	}
 
 }

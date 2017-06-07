@@ -8,4 +8,5 @@ import gamesbeaten.entity.Jogo;
 
 public interface JogadorJogoDAO extends GenericDAO<JogadorJogo, JogadorJogoPK>{
 	List<JogadorJogo> listarJogosDoJogador(int codigo);
+	Long qtJogosJogador(int codigo);
 }

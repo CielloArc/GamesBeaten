@@ -23,9 +23,15 @@ public class JogadorJogoBO {
 		}
 	}
 	
-	public List<JogadorJogo> listar(int codigo){
+	public List<JogadorJogo> listarJogosJogador(int codigo){
 		EntityManager em = EntityManagerFactorySingleton.pegarInstancia().createEntityManager();
 		JogadorJogoDAO dao = new JogadorJogoDAOImpl(em);
 		return dao.listarJogosDoJogador(codigo);
+	}
+	
+	public Long qtJogosJogador(int codigo){
+		EntityManager em = EntityManagerFactorySingleton.pegarInstancia().createEntityManager();
+		JogadorJogoDAO dao = new JogadorJogoDAOImpl(em);
+		return dao.qtJogosJogador(codigo);
 	}
 }
