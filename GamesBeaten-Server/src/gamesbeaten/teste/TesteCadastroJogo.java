@@ -12,11 +12,30 @@ import gamesbeaten.entity.Jogo;
 import gamesbeaten.entity.Plataforma;
 import gamesbeaten.entity.Publisher;
 
-public class TesteCadastro {
+public class TesteCadastroJogo {
 
 	public static void main(String[] args) {
 		
 		List<Plataforma> listaPlataforma = new ArrayList<Plataforma>();
+		listaPlataforma.add(new Plataforma("PlayStation 3"));
+		
+		List<Developer> listaDev = new ArrayList<Developer>();
+		listaDev.add(new Developer("Crypton Future Media"));
+		listaDev.add(new Developer("SEGA"));
+		
+		Jogo jogo = new Jogo("Hatsune Miku: Project DIVA F", 
+					listaDev, 
+					new Publisher("SEGA"),
+					new GregorianCalendar(2012, Calendar.AUGUST, 30),
+					null,
+					listaPlataforma);
+		
+		JogoBO bo = new JogoBO();
+		bo.cadastrar(jogo);
+		
+		System.exit(0);
+		
+		/*List<Plataforma> listaPlataforma = new ArrayList<Plataforma>();
 		listaPlataforma.add(new Plataforma("PlayStation 3"));
 		listaPlataforma.add(new Plataforma("PC"));
 		
@@ -34,7 +53,7 @@ public class TesteCadastro {
 		JogoBO bo = new JogoBO();
 		bo.cadastrar(jogo);
 		
-		System.exit(0);
+		System.exit(0);*/
 	}
 
 }

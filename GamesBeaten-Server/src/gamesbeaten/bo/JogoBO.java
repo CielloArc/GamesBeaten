@@ -56,4 +56,10 @@ public class JogoBO {
 			e.printStackTrace();
 		}
 	}
+	
+	public List<Jogo> listaJogosPesquisa(String nomeJogo){
+		EntityManager em = EntityManagerFactorySingleton.pegarInstancia().createEntityManager();
+		JogoDAO dao = new JogoDAOImpl(em);
+		return dao.listaJogosPesquisa(nomeJogo);
+	}
 }
